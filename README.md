@@ -2,7 +2,7 @@
 
 A full-stack travel booking website for North India bus routes — built with **Next.js 14**, **MongoDB**, **Nodemailer**, and **Tailwind CSS**.
 
-Live demo: [northtravels.vercel.app](https://northtravels.vercel.app) _(update after deployment)_
+Live demo: [northtravels.vercel.app](https://north-travels.vercel.app/) _(update after deployment)_
 
 ---
 
