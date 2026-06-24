@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: 'Home',     href: '#home'     },
   { label: 'Services', href: '#services' },
   { label: 'Routes',   href: '#routes'   },
-  // { label: 'Fleet',    href: '#fleet'    },
   { label: 'Contact',  href: '#contact'  },
 ]
 
@@ -31,8 +30,19 @@ export default function Navbar() {
 
   const handleNav = (href: string) => {
     setIsOpen(false)
-    if (href === '#home') { window.scrollTo({ top: 0, behavior: 'smooth' }); return }
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    setTimeout(() => {
+      if (href === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        return
+      }
+      const id = href.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        const navHeight = 72
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+    }, 300)
   }
 
   return (
